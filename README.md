@@ -244,36 +244,3 @@ services:
 
 All that is left to do is to just spin up `docker-compose up` and  afterwards, hit it up with POSTMAN.
 
-# Results
-
-On running `docker compose up`
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/be124881-f87e-4a86-ae26-124734106520/Screenshot_2021-06-11_at_3.56.21_AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/be124881-f87e-4a86-ae26-124734106520/Screenshot_2021-06-11_at_3.56.21_AM.png)
-
- If we call coffee service with the right headers
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2bacd0fc-83e5-4ef3-87ac-e9c6854688b0/Screenshot_2021-06-11_at_3.59.09_AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2bacd0fc-83e5-4ef3-87ac-e9c6854688b0/Screenshot_2021-06-11_at_3.59.09_AM.png)
-
-If we call tea service with the right headers
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/96abaa45-212d-4e2b-bed9-e65fa45c79d2/Screenshot_2021-06-11_at_4.00.17_AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/96abaa45-212d-4e2b-bed9-e65fa45c79d2/Screenshot_2021-06-11_at_4.00.17_AM.png)
-
-If we call a service without auth headers or with wrong auth headers
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7bc5e4ba-7c0d-4ecd-a61b-6d6aae4520b2/Screenshot_2021-06-11_at_4.01.25_AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7bc5e4ba-7c0d-4ecd-a61b-6d6aae4520b2/Screenshot_2021-06-11_at_4.01.25_AM.png)
-
-If we call the internal auth service
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c663788b-e222-46a2-8eae-9ced5a46f8d1/Screenshot_2021-06-11_at_4.04.20_AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c663788b-e222-46a2-8eae-9ced5a46f8d1/Screenshot_2021-06-11_at_4.04.20_AM.png)
-
-# Scaling our Services
-
-If our Microservice gets popular and load increases we may need to scale our system for which docker provides a simple way
-
-Lets scale our coffee service to 4 by running
-
-`docker-compose scale coffee=4`
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c6dde34b-7c21-4a23-b0ff-5eafff4a8ed2/Screenshot_2021-06-11_at_4.11.35_AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c6dde34b-7c21-4a23-b0ff-5eafff4a8ed2/Screenshot_2021-06-11_at_4.11.35_AM.png)
-
-For scaling of containers we are mostly going to use the features of kubernetes rather than depending on this.
